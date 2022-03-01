@@ -1,0 +1,61 @@
+/*
+COMO FUNCIONA CSS
+especificidad -> establece cómo de específico es un selector
+para saber qué estilo aplicar, el cálculo se realiza con la 
+siguiente fórmula:
+    etiquetas y pseudoelementos 0,0,1
+    clases, atrubutos y pseudoclases 0,1,0
+    ids 1,0,0
+    estilos en linea 1,0,0,0
+    nunca usar !important -> siempre tiene la prioridad
+cascada -> funciona siempre que la especificidad sobre el elemento
+sea la misma
+herencia -> es la capacidad que tienen algunos elementos de eredar
+algunas propiedades de sus elementos contenedores (padres, abuelos, etc)
+*/
+/* h1 {
+  background-color:brown;
+}
+.title {
+  background-color:blue;
+}
+#title {
+  background-color:chartreuse;
+}
+h1.title {
+  background-color:darkkhaki;
+}
+h1#title {
+  background-color:mediumseagreen;
+}
+h1.title#title {
+  background-color:orangered;
+} */
+
+/* 
+ejemplo de herencia: la etiqueta con el elemento span hereda
+las propiedades del elemento padre que es (h1)
+*/
+.title {
+  color: brown;
+  font-size: 25px;
+}
+/*
+ejemplo de herencia: la etiqueta con el elmento (a) no hereda
+las propiedades del elemento padre que es (p). Para forzar la
+herencia se utiliza el valor inherit. Para forzar que el 
+elemento no herede las propiedades del padre se utiliza el valor initial
+*/
+.text {
+  color: blueviolet;
+  font-size: 18px;
+}
+.link {
+  color: inherit;
+}
+.list {
+  color: darkorange;
+}
+.list-item {
+  color: initial;
+}

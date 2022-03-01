@@ -1,0 +1,13 @@
+/*
+ selector -> el elemento al que vamos a aplicar estilos
+ propiedad -> lo que vamos a cambiar
+ valor -> el nuevo valor que va a tener
+ propiedad: valor -> se le denomina delcaración
+ el conjunto selector:propiedad:valor -> se le denomina regla
+*/
+
+selector {
+  propiedad: valor1;
+  propiedad: valor2;
+  propiedad: valor3;
+}

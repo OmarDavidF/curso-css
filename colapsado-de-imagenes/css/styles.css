@@ -1,0 +1,38 @@
+/*
+ LOS MARGENES VERTICALES COLAPSAN
+  no se deben juntar margin bottoms y tops esto genera problemas
+  de solapamiento
+*/
+
+*{
+  box-sizing: border-box;
+}
+
+body{
+  background-color: #333;
+  color: #fff;
+  margin: 0;
+}
+
+.header{
+  background-color: lightcoral;
+  height: 100px;
+  margin-bottom: 20px;
+  /* solucion colapsado de márgenes 3 formas: */
+  /* overflow: hidden; */
+  /* padding-top: 0.1px; */
+  border: 0.1px solid lightcoral;
+}
+
+.box-uno,
+.box-dos {
+  background-color: darkgrey;
+  width: 200px;
+  height: 200px;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+.box-uno {
+  margin-bottom: 30px;
+}

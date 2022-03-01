@@ -1,0 +1,108 @@
+/*
+  selectores simples:
+  - selectores elementales
+      selector universal -> *
+      selector de tipo o etiqueta -> nombre de la etiqueta
+  - selectores de atributo
+	    selector de id -> id del elemento html
+			selector de clas -> clase del elemento html
+			otros atributos
+			  [atributo] -> para dar estilo a todos los elementos con el mismo atributo
+				[atributo=valor] -> para dar estilo a de forma individual a cada atributo
+				[atributo^=valor] -> comprobamos si el atributo empiza por el mismo valor
+				[atributo*=valor] -> comprobamos si el atributo tiene el mismo valor
+				[atributo$=valor] -> comprobamos si el atributo termina por el mismo valor
+				[atributo|=valor] -> para seleccionar un tributo con el valor y un guión
+	selectores compuestos:
+  - selectores agurpados
+  - selectores combinadores
+	    NOTE: en html hay una relación jerárquica, cada elemento html es un nodo
+		  todos los nodos tienen un padre a excepción del nodo raíz (html), el nodo 
+			padre puede tener nodos hijos y son hermanos aquellos nodos que tienen el 
+			mismo nodo padre	
+	    selector descendiente -> permite dar estilos a un selector dentro de otro
+			selector de hermano siguiente -> +
+			selector de hermanos siguientes -> ~
+			selector de hijo directo -> >
+  - pseudoclases - pseudoelementos
+*/
+
+/* --- selector universal */
+/* * {
+  background-color: darkkhaki;
+} */
+/* --- selector de tipo o etiqueta */
+/* h1 {
+	color: brown;
+}
+p {
+	background-color: crimson;
+} */
+/* 
+--- selector de id: no es recomendable dar estilos con id debido
+a que los estilos no serian reutilizables ya que cada id debe ser único 
+*/
+/* #title {
+	color:blueviolet;
+} */
+/*
+--- selector de clase: el más recomendado para dar estilos
+ya que permite que sean reutilizables en varios elementos
+uilizando el mismo selector
+*/
+/* .paragraph {
+	background-color:indianred;
+} */
+/* 
+--- selector de atributo: para dar estilo al mismo tipo de atributo utilizamo
+[atributo], si se queire da estilo de forma individual a cada atributo utilizamos
+[atributo=valor], para aplicar estilos a varios atributos que inician con el mismo 
+valor utilizamos [triburo^=valor] 
+*/
+/* [href] {
+	background-color:aqua;
+}
+[href="https://www.google.com"] {
+	background-color:lightcoral;
+}
+[href^="color"] {
+	background-color:darkgoldenrod;
+}
+[href*="modo"] {
+	background-color:crimson;
+}
+[href$="dibujo"] {
+	background-color:darkgreen;
+}
+[lang|="en"] {
+	background-color:darkolivegreen;
+} */
+/* --- selectores agrupados: dar los mismos estilos utilizando la clase */
+/* .texto,
+.texto-2,
+.texto-3,
+.texto-4 {
+	background-color:cadetblue;
+} */
+/* 
+--- selector descendiente seleccionamos un selector dentro de otro de esta
+forma solo se aplica el estilo a la clase dentro del contenedor div. Como 
+maximo utilizar dos elementos  
+*/
+/* div .secundario {
+	background-color:chocolate;
+} */
+/*
+--- selector de hermano seguiente: podemos aplicar estilos através
+de nodos hermanos 
+*/
+/* .texto-5 + .texto-6 {
+	background-color:lightblue;
+}
+.texto-7 ~ p {
+	background-color:teal;
+} */
+/* --- selector de hijo directo: seleccionamos solo los hijos director */
+.container > p {
+	background-color: darksalmon;
+}

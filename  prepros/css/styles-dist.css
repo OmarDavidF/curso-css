@@ -1,0 +1,21 @@
+/*
+CSS funciona en módulos independientes, esto hace que cada
+módulo pueda crecer sin depender del resto. Los prefijos 
+propietarios, cuando una propiedad css se combierte en un 
+estandar o se empiezan a realizar pruebas con ellla los 
+navegadores necesitan implementarla. Si la propiedad se ha
+convertido en recomendación y pertenece a css los prefijos no 
+hace falta, pero hasta que esto suceda hace falta que los 
+navegadores sean capaces de interpretar esta propiedad para 
+esto vamos a utilizar la herramienta prepro.
+*/
+.example {
+    display: -ms-grid;
+    display: grid;
+    transition: all .5s;
+    -webkit-user-select: none;
+       -moz-user-select: none;
+        -ms-user-select: none;
+            user-select: none;
+    background: linear-gradient(to bottom, white, black);
+}

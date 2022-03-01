@@ -1,0 +1,149 @@
+/*
+BOX MODEL
+- las cajas tienen unas propiedades básicas:
+1. el contenido de la cajas
+2. el borde
+3. el padding separa el borde del contenido
+   - controla la distancia desde el borde de la caja hasta el contenido
+4. el magin permite separar unas cajas de otras:
+   - controla la separación de una caja y las que la rodean
+5. el ancho y alto de la caja  
+*/
+/*
+  margin -> propiedad que permite generar espacio entre elementos
+  margin es una propiedad abrebiada y permite controlar los cuatro
+  lados para dar margenes:
+  margin-top: margen superior
+  margin-right: margen derecho
+  margin-bottom: margen inferior
+  margin-left: margen izquierdo
+  
+  admite hasta cuatro valores que van en el orden de las agujas del reloj:
+  4 valores -> margin: top right bottom left;
+  3 valores -> margin: top left/right bottom;
+  2 valores -> margin: top/bottom left/right;
+  1 valor -> margin: top/right/bottom/left;
+*/
+/* 
+  es una buena practica resetear el margin del body ya que este
+  por defecto trae por 8 px
+*/
+body {
+  margin: 0px;
+}
+/* 
+  para que funcione el margin left y right el elmento de bloque debe
+  tener un width declarado
+*/
+.block {
+  background-color: coral;
+  width: 200px;
+  height: 200px;
+  margin: 100px;
+}
+/* los elementos en linea no tienen medidas a través de height y width */
+/* los elementos de linea no tienen margin top y botton */
+.inline {
+  background-color: violet;
+  /* width: 200px;
+  height: 200px; */
+  /* margin-top: 100px;
+  margin-bottom: 100px; */
+  margin-left: 100px;
+  margin-right: 100px;
+}
+/* podemos mover un bloque utilizando márgenes automáticos */
+.block-dos {
+  background-color: darkolivegreen;
+  height: 200px;
+  width: 200px;
+  /* para centrar el elemento */
+  margin-left: auto;
+  margin-right: auto;
+}
+/*
+  padding: esta propiedad nos permite generar espacio interno entre 
+  el borde y la caja, es una propiedad abreviada que controla los cuatro
+  lados posibles para dar padding:
+  padding-top: padding superior
+  padding-right: padding derecho
+  padding-bottom: padding inferior
+  padding-left: padding izquierdo
+
+  admite hasta cuatro valores que van en el orden de las agujas del reloj:
+  4 valores -> padding: top right bottom left
+  3 valores -> padding; top left/right botton
+  2 valores -> padding: top/bottom left/right
+  1 valores -> padding: top/right/bottom/left
+*/
+.block-tres {
+  background-color: aqua;
+  width: 100px;
+  height: 100px;
+  margin: 100px auto 100px;
+  padding-left: 100px;
+  padding-right: 100px;
+}
+/* los elementos en linea si tienen medidas atraves de padding top,botton,right,left */
+.inline-dos {
+  background-color: darkslateblue;
+  padding-left: 100px;
+  padding-top: 100px;
+  padding-bottom: 100px;
+}
+/*
+  border: es la propiedad que me permite modificar el borde de la caja
+  es una propiedad abreviada que agrupa tres propiedades:
+  border-width: ancho del borde;
+  border-color: color del borde;
+  border-style: estilo del borde;
+
+  también es una propiedad abreviada: 
+  border-top-width
+  border-right-width
+  border-bottom-width
+  border-left-widht
+  border-top-color
+  border-right-color
+  border-bottom-color
+  border-left-color
+  border-top-style
+  border-right-style
+  border-bottom-style
+  border-left-style
+*/ 
+.button {
+  padding: 25px 60px;
+  border: 10px solid red;
+  border-top-color: blue;
+  border-right-style: double;
+  border-bottom-width: 20px;
+  border-left-style: double;
+}
+/*
+  box sizing: es la propiedad que nos permite controlar el calculo que hace
+  el navegador a la hora de modificar las propiedades content, padding y
+  border
+
+  los dos valores que podemos darle son:
+  content-box -> valor por defecto
+  border-box -> cálculo del tamaño del elemento incluyendo padding y border
+
+  una buena práctica es utilizar el selector universal para asignar el border box
+  y se respete siempre el tamaño que asignamos a la caja
+  
+  * {
+    box-sizing: border-box;
+  }
+*/
+.block-cuatro {
+  background-color:deeppink;
+  border: 10px solid royalblue;
+  margin-top: 200px;
+  width: 200px;
+  height: 200px;
+  margin-left: auto;
+  margin-right: auto;
+  padding: 20px;
+  box-sizing:border-box;
+}

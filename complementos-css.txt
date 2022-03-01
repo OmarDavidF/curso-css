@@ -1,0 +1,8 @@
+1. página para verificar el css: https://jonassebastianohlsson.com/specificity-graph/ 
+2. utilizar normalize en los proyectos:https://necolas.github.io/normalize.css/
+3. descargar prepros: https://prepros.io/
+4. adobe color para paletas de colores: https://color.adobe.com/es/create/color-wheel
+5. página para fuentes googlefonts: https://fonts.google.com/
+6. página para descargar fuentes: https://www.1001fonts.com/
+
+Un buen CSS se tiene que ver lo mas lineal posible

@@ -1,0 +1,204 @@
+/*
+    La propiedad position nos permite posicionar los elementos. Hay algunos conceptos que se deben conocer para entender position.
+    
+    Flujo de renderizado -> Por norma general los elementos se dibujan de izquierda a derecha y de arriba abajo. El punto 0,0 de los elementos, por norma general, es la esquina superior izquierda.
+    Espacio reservado -> Es el espacio que tiene un elemento asignado en el navegador.
+    Elemento posicionado -> Esto significa que el elemento tiene la propiedad position con un valor distinto de "static", que es el valor que tiene esta propiedad por defecto.
+    Stackin context -> Contexto de apilamiento. Es el orden en el que se apilarán las cajas que se superponen, dentro del mismo contenedor.
+    Al posicionar un elemento se habilitan 5 propiedades que podemos utilizar para mover los elementos en los 3 ejes.
+      top -> El elemento se moverá desde la parte superior la distancia que le hayamos indicado.
+      right -> El elemento se moverá desde la parte derecha la distancia que le hayamos indicado.
+      bottom -> El elemento se moverá desde la parte inferior la distancia que le hayamos indicado.
+      left -> El elemento se moverá desde la parte izquierda la distancia que le hayamos indicado.
+      z-index -> Nos permite mover el elemento en el contexto de apilamiento (eje z)
+      NOTA: Si a un elemento le declaramos la propiedad top y/o left, las propiedades bottom y/o right no funcionarán. 
+    Los posibles valores que le podemos dar a position son.
+      Static -> Es el valor que tiene por defecto un elemento, con este valor el elemento NO ESTÁ POSICIONADO y por lo cual no podremos moverlo
+      Relative -> El elemento mantendrá su posición y medidas en el flujo de renderizado y mantendrá su espacio reservado. Si lo movemos lo hará usando su posición en el html como punto de referencia.
+      Absolute -> El elemento perderá sus medidas y su espacio reservado. Si lo movemos usará el elemento posicionado contenedor como referencia. Si no tiene ninguno, usará el elemento html de referencia.
+      Fixed -> El elemento perderá sus medidas y su espacio reservado.
+      Si lo movemos usará el elemento html de referencia, y además se quedará fijo en esa posición aunque hagamos scroll.
+      Sticky -> Es una mezcla de position relative y "fixed".
+      Con este tipo de posicionamiento los valores top, left, bottom y right no sirven para mover el elemento, si no para indicarle en qué punto pasará a tener un comportamiento de posicionamiento similar a fixed, hasta llegar a ese punto se comportará como si no tuviera posicionamiento, aunque sí contará como posicionado si necesitáramos colocar otro elemento respecto a él (absolute)
+    z-index: Es la propiedad que nos permite ordenar los elementos superpuestos para controlar cual se coloca por delante y cual por detrás.
+*/
+* {
+  box-sizing: border-box;
+}
+
+body {
+  margin: 0;
+}
+/*------------------------------- POSITION RELATIVE ----------------------------------*/
+/* .box {
+  width: 100px;
+  height: 100px;
+  font-size: 15px;
+  padding: 40px 0;
+  text-align: center;
+} */
+
+/* se mueve 200px desde su posición inicial */
+/* .box-1 {
+  background-color: brown;
+  position: relative;
+  top: 100px;
+} */
+
+/* se mueve 200px desde su posición inicial */
+/* .box-2 {
+  background-color: blueviolet; 
+  position: relative;
+  top: 100px;
+} */
+
+/* se produce un solapamiento */
+/* .box-3 {
+  background-color: cornflowerblue;
+  margin-top: 200px;
+  position: relative;
+  top: 50px;
+}
+
+.box-4 {
+  background-color: coral;
+} */
+/*---------------------------- POSITION ABSOLUTE -------------------------------------*/
+/* .box-dos {
+  text-align: center;
+}
+
+.box-5 {
+  background-color: darkorange;
+} */
+
+/*
+  el elemento pierde sus medidas, al moverlo utiliza el elemento contenedor 
+  como referencia para desplazarse en este caso el documento html
+ */
+/* .box-6 {
+  background-color: lawngreen;
+  position: absolute;
+  bottom: 0;
+  right: 0;
+} */
+/*--------------------------------------------------------------------------------------*/
+/* .box-tres {
+  text-align: center;
+  width: 100px;
+  height: 100px;
+} */
+/* si el contenedor está posicionado box-7 lo utiliza como referencia */
+/* .container {
+  width: 300px;
+  height: 300px;
+  background-color: lightcoral;
+  position: relative;
+  margin-top: 100px;
+}
+
+.box-7 {
+  background-color: darkslategrey;
+  position: absolute;
+  right: 0;
+  bottom: 0;
+}
+
+.box-8 {
+  background-color: goldenrod;
+  position: absolute;
+  right: 0;
+  bottom: 0;
+} */
+
+/* así funciona absolute con elementos de línea, se pueden dar medidas y posisionar */
+/* .link-1 {
+  background-color: lightslategray;
+  position: absolute;
+  bottom: 150px;
+  width: 100px;
+  height: 50px;
+  padding: 14px 0;
+  text-align: center;
+}
+
+.link-2 {
+  background-color: lawngreen;
+} */
+/*---------------------------------- POSITION FIXED -----------------------------------*/
+/* body {
+  padding-top: 68px;
+}
+
+.header {
+  background-color: aqua;
+  text-align: center;
+  padding: 25px 0;
+  position: fixed;
+  top: 0;
+  width: 100%;
+} */
+/*-------------------------------------- STICKY --------------------------------------*/
+/* 
+  el contenido debe tener un alto suficiente para generar un scroll y de esta forma
+  se fije el elmento con el valor sticky, la propiedad overflow no debe estar declarada
+*/
+/* img {
+  display: block;
+  width: 100%;
+}
+
+.header {
+  background-color: lightslategray;
+  padding: 25px 0;
+  text-align: center;
+  font-size: 20px;
+}
+
+.article-title {
+  background-color: brown;
+  width: 150px;
+  position: sticky;
+  top: 0;
+} */
+/*------------------------------------ Z-INDEX -----------------------------------------*/
+.box-cuatro {
+  width: 120px;
+  height: 120px;
+  padding: 50px 0;
+  text-align: center;
+}
+/*
+  utilizando z-index el elemento padre no se puede poner por delante del hijo.
+  Se puede colocar al hijo por detras del padre, para esto al hijo se le da
+  un z-index negativo y el padre no debe tener ningun z-index delcarado
+*/
+.container-2 {
+  background-color: lightcoral;
+  width: 240px;
+  height: 240px;
+  position: relative;
+}
+
+.box-9 {
+  background-color: lawngreen;
+  position: relative;
+  left: 170px;
+  z-index: -1;
+}
+
+/* 
+  por defecto el z-index está en auto por lo cual el orden de apilamiento 
+  es el que tienen en el html
+*/
+.box-10 {
+  background-color: lightseagreen;
+  position: relative;
+  top: 50px;
+  z-index: 1;
+}
+
+.box-11 {
+  background-color: lightslategray;
+  position: relative;
+}
